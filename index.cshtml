@@ -1,0 +1,70 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    short {
+              
+color
+    }
+    </style>
+</head>
+
+
+ <div class="container">
+        <div class="row">
+
+            
+
+                <div class="col-4">
+                    <div id="canvas-holder">
+                      <canvas id="chart-area"></canvas>
+                    </div>
+                  
+                    <canvas id="myChart" width="100" height="100"></canvas>
+                    <script>
+                    const ctx = document.getElementById('myChart').getContext('2d');
+                    const myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Aktif İş İlanı', 'Aday', 'Aktif Çalışan'],
+                            datasets: [{
+                                label: 'Kullanıcı Verileri',
+                                data: [40,92,35],
+                                backgroundColor: [
+                                    'rgb(255, 99, 132)',
+                                    'rgb(54, 162, 235)',
+                                    'rgb(255, 206, 86)'
+                                ],
+                                hoverOffset: 4
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                 
+                    </script>
+                  </div>
+           
+          <div class="col-6 text-primary">
+              <h1 id ="short">
+                  HIZLI İŞLEMLER
+              </h1>
+          </div>
+        </div>
+        </div>
+
+
+        <h1 id ="baslik" class="container">
+        <h1 class="row">
+            <h1 class= "col-4 pl-3 text-primary">  Toplam Veri Sayısı</h1>
+            </h1>
+                        </h1>
